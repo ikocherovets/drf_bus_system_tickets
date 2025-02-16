@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import bus_detail, bus_list
+from .views import BusDetail, BusList
 
 app_name = "station"
 
 urlpatterns  = [
-    path("buses/", bus_list, name="bus_list"),
-    path("buses/<int:pk>", bus_detail, name="bus_detail"),
+    path("buses/", BusList.as_view(), name="bus_list"),
+    path("buses/<int:pk>", BusDetail.as_view(), name="bus_detail"),
 ]
